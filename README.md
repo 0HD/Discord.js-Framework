@@ -16,8 +16,3 @@ If you'd like to self-host the bot, follow these steps:
 > If you're on Windows, use the `RUN.bat` file to start the bot whenever you want.
 
 Once you're done, press `CTRL` + `C` in the window to stop the bot.
-
-## Developers
-
-Want to see how it works? Clone the repository, open `index.js` in your favorite code editor, and read the comments inside.
-You can help contribute by modifying the code, open making a pull request.
