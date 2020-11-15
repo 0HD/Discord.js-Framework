@@ -1,0 +1,3 @@
+## The config file contains user data so it
+## should be ignored by git for security reasons.
+config.json
