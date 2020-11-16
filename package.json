@@ -1,6 +1,6 @@
 {
   "name": "0hd-bot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A work-in-progress Discord bot made for learning JavaScript",
   "main": "index.js",
   "scripts": {
