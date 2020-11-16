@@ -2,11 +2,11 @@
 /* eslint-disable spaced-comment */
 console.log('Starting...');
 
-// require the discord.js module
+// require the discord.js module and config file
 const Discord = require('discord.js');
+const { prefix, token } = require('./config.json');
 
 // create a new Discord client
-const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 
 // when the client is ready, run this code
@@ -15,40 +15,37 @@ client.once('ready', () => {
     // prints to the console when it's ready
     console.log('Ready.');
 });
-// //
-
 
 // when the client receives a message
 client.on('message', message => {
 
     // checks if a message is prefixed, then arranges the arguments into "args"
     if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    // puts all arguments from the message (separated by spaces) into an array
     const args = message.content.slice(prefix.length).trim().split(/ +/);
+    // puts the command name into a variable
     const command = args.shift().toLowerCase();
-    // using the new `command` variable, this makes it easier to manage!
-    // you can switch your other commands to this format as well
 
     // prints messages to the console
     console.log(`(MESSAGE FROM ${message.author.username}) ${message.content}`);
-    ////
-
 
     ////  C O M M A N D S  ////
 
     // "ping" command //
-    if (message.content === (`${prefix}ping`)) {
+    if (command === 'ping') {
         message.channel.send('Pong.');
     }
     // "beep" command //
-    else if (message.content === (`${prefix}beep`)) {
+    else if (command === 'beep') {
         message.channel.send('Boop.');
     }
     // "server" command //
-    else if (message.content === `${prefix}server`) {
+    else if (command === 'server') {
         message.channel.send(`Server: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
     }
     // "user" command //
-    else if (message.content === `${prefix}user`) {
+    else if (command === 'user') {
         message.channel.send(`Your name: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
     // "args" command //
