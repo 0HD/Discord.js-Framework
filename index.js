@@ -87,7 +87,9 @@ client.on('message', message => {
     }
     // delete command //
     else if (command === 'delete') {
-        const amount = parseInt(args[0] + 1); // gets a number from the first argument
+        // gets a number from the first argument
+        // adds 1 to also delete the user's message with the command
+        const amount = parseInt(args[0] + 1);
         if (isNaN(amount)) { // check if a real number was provided
             return message.reply('that doesn\'t seem to be a valid number.');
         }
