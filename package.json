@@ -1,13 +1,13 @@
 {
-  "name": "firstbot",
-  "version": "1.0.0",
-  "description": "",
+  "name": "0hd-bot",
+  "version": "0.1.0",
+  "description": "A work-in-progress Discord bot made for learning JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "https://github.com/0HD",
+  "license": "AGPL-3.0",
   "dependencies": {
     "discord.js": "^12.4.1"
   }
