@@ -32,20 +32,27 @@ client.on('message', message => {
     console.log(`(MESSAGE FROM ${message.author.username}) ${message.content}`);
     ////
 
-    // sends a response message when someone sends a command
-    if (message.content === (`${prefix}ping`)) { // "ping" command
+
+    ////  C O M M A N D S  ////
+
+    // "ping" command //
+    if (message.content === (`${prefix}ping`)) {
         message.channel.send('Pong.');
     }
-    else if (message.content === (`${prefix}beep`)) { // "beep" command
+    // "beep" command //
+    else if (message.content === (`${prefix}beep`)) {
         message.channel.send('Boop.');
     }
-    else if (message.content === `${prefix}server`) { // "server" command
+    // "server" command //
+    else if (message.content === `${prefix}server`) {
         message.channel.send(`Server: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
     }
-    else if (message.content === `${prefix}user`) { // "user" command
+    // "user" command //
+    else if (message.content === `${prefix}user`) {
         message.channel.send(`Your name: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
-    else if (command === 'args') { // "args" command
+    // "args" command //
+    else if (command === 'args') {
         if (!args.length) {
             return message.channel.send(`${message.author}, you didn't provide any arguments.`);
         }
@@ -55,7 +62,8 @@ client.on('message', message => {
 
         message.channel.send(`First argument: ${args[0]}`);
     }
-    else if (command === 'kick') { // "kick" command
+    // "kick" command //
+    else if (command === 'kick') {
         // grab the "first" mentioned user from the message
         // this will return a `User` object, just like `message.author`
         const taggedUser = message.mentions.users.first(); // get the first mentioned user
@@ -77,7 +85,22 @@ client.on('message', message => {
         // by default, discord.js will `.join()` the array with `\n`
         message.channel.send(avatarList);
     }
-
+    // delete command //
+    else if (command === 'delete') {
+        const amount = parseInt(args[0] + 1); // gets a number from the first argument
+        if (isNaN(amount)) { // check if a real number was provided
+            return message.reply('that doesn\'t seem to be a valid number.');
+        }
+        else if (amount <= 0 || amount > 11) { // check if the number provided is supported
+            return message.reply('you need to input a number between 1 and 10.');
+        }
+        else if (amount == 1) { // if user wants to delete 1 message
+            message.channel.delete(1);
+        }
+        else if (amount > 0 || amount < 12) { // delete
+            message.channel.bulkDelete(amount, true);
+        }
+    }
     ////
 });
 
