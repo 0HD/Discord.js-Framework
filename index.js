@@ -40,6 +40,28 @@ client.on('message', message => {
     // puts the command name into a variable
     const command = args.shift().toLowerCase();
 
+    if (command === 'ping') {
+        client.commands.get('ping').execute(message, args);
+    }
+    else if (command === 'args') {
+        client.commands.get('args').execute(message, args);
+    }
+    else if (command === 'avatar') {
+        client.commands.get('avatar').execute(message, args);
+    }
+    else if (command === 'delete') {
+        client.commands.get('delete').execute(message, args);
+    }
+    else if (command === 'kick') {
+        client.commands.get('kick').execute(message, args);
+    }
+    else if (command === 'server') {
+        client.commands.get('server').execute(message, args);
+    }
+    else if (command === 'user') {
+        client.commands.get('user').execute(message, args);
+    }
+
     // prints messages to the console
     console.log(`(MESSAGE FROM ${message.author.username}) ${message.content}`);
 });
