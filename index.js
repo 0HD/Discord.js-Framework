@@ -51,7 +51,7 @@ client.on('message', message => {
     }
 
     // prints messages to the console
-    console.log(`(MESSAGE FROM ${message.author.username}) ${message.content}`);
+    console.log(`Command from [${message.author.username}]: ${message.content}`);
 });
 
 
