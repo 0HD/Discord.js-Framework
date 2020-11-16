@@ -1,5 +1,3 @@
-# Discord.js Test Bot
-
 ## Installation
 
 If you'd like to self-host the bot, follow these steps:
