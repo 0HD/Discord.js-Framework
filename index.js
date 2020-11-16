@@ -40,26 +40,13 @@ client.on('message', message => {
     // puts the command name into a variable
     const command = args.shift().toLowerCase();
 
-    if (command === 'ping') {
-        client.commands.get('ping').execute(message, args);
-    }
-    else if (command === 'args') {
-        client.commands.get('args').execute(message, args);
-    }
-    else if (command === 'avatar') {
-        client.commands.get('avatar').execute(message, args);
-    }
-    else if (command === 'delete') {
-        client.commands.get('delete').execute(message, args);
-    }
-    else if (command === 'kick') {
-        client.commands.get('kick').execute(message, args);
-    }
-    else if (command === 'server') {
-        client.commands.get('server').execute(message, args);
-    }
-    else if (command === 'user') {
-        client.commands.get('user').execute(message, args);
+    // dynamic commands // uses the commands folder
+    if (!client.commands.has(command)) return;
+    try {
+        client.commands.get(command).execute(message, args);
+    } catch (error) {
+        console.error(error);
+        message.reply('there was an error trying to execute that command!');
     }
 
     // prints messages to the console
