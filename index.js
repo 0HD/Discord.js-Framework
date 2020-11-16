@@ -89,18 +89,21 @@ client.on('message', message => {
     else if (command === 'delete') {
         // gets a number from the first argument
         // adds 1 to also delete the user's message with the command
-        const amount = parseInt(args[0] + 1);
+        const amount = parseInt(args[0]) + 1;
         if (isNaN(amount)) { // check if a real number was provided
             return message.reply('that doesn\'t seem to be a valid number.');
         }
-        else if (amount <= 0 || amount > 11) { // check if the number provided is supported
-            return message.reply('you need to input a number between 1 and 10.');
-        }
-        else if (amount == 1) { // if user wants to delete 1 message
+        else if (amount == 2) { // if user wants to delete 1 message
             message.channel.delete(1);
         }
-        else if (amount > 0 || amount < 12) { // delete
-            message.channel.bulkDelete(amount, true);
+        else if (amount > 2 || amount < 12) { // check if the number provided is supported
+            message.channel.bulkDelete(amount, true).catch(err => { // bulk-delete / catch any errors
+                console.error(err);
+                message.channel.send('There was an error trying to prune messages in this channel!'); 
+            });
+        }
+        else { // if the number isn't supported
+            return message.reply('you need to input a number between 1 and 10.');
         }
     }
     ////
