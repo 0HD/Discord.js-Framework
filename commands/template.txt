@@ -1,3 +1,4 @@
+// CHANGE THIS .txt FILE TO A .js FILE WHEN YOU'RE DONE!!
 module.exports = {
     name: 'X', // replace X with your command's name
     description: 'Y', // replace Y with your command's description
