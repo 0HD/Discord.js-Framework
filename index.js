@@ -36,10 +36,6 @@ client.on('message', message => {
     if (command === 'ping') {
         message.channel.send('Pong.');
     }
-    // "beep" command //
-    else if (command === 'beep') {
-        message.channel.send('Boop.');
-    }
     // "server" command //
     else if (command === 'server') {
         message.channel.send(`Server: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
