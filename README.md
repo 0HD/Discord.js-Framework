@@ -1,4 +1,5 @@
-# Discord.js Test Bot
+> **WARNING!**
+> [This version is outdated. Please use the latest version.](https://github.com/0HD/discordjs-bot)
 
 ## Installation
 
