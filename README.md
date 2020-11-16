@@ -3,7 +3,7 @@
 If you'd like to self-host the bot, follow these steps:
 
 1. Install [Node.js](https://nodejs.org/) and make sure your [bot token](https://discord.com/developers/applications/) is ready.
-2. [Download](https://github.com/0HD/discordjs-bot/archive/master.zip) or clone this repository
+2. [Get the latest version.](https://github.com/0HD/discordjs-bot/releases/latest)
 3. Rename `example-config.json` to `config.json`.
 4. Edit `config.json` and paste the bot token there.
 > NOTE: If you're on Windows, you can skip the steps below and run `INSTALL.bat` to complete the installation.
