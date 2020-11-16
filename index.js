@@ -99,7 +99,7 @@ client.on('message', message => {
         else if (amount > 2 || amount < 12) { // check if the number provided is supported
             message.channel.bulkDelete(amount, true).catch(err => { // bulk-delete / catch any errors
                 console.error(err);
-                message.channel.send('There was an error trying to prune messages in this channel!'); 
+                message.channel.send('There was an error trying to prune messages in this channel!');
             });
         }
         else { // if the number isn't supported
