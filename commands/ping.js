@@ -1,7 +1,11 @@
 module.exports = {
-    name: 'ping',
-    description: 'Ping!',
+    name: 'X', // replace X with your command's name
+    description: 'Y', // replace Y with your command's description
     execute(message, args) {
-        message.channel.send('Pong.'); // your command here
+        //======================================||
+        //                                      ||
+        // place your code for the command here ||
+        //                                      ||
+        //======================================||
     },
 };
